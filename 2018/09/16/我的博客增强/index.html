@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+	<meta charset="utf-8">
+
+	<title>我的博客增强 | Richie</title>
+	<meta name="viewport" content="width=device-width">
+	<link href="/css/share/font-awesome.min.css" rel="stylesheet" type="text/css"> 
+
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/search.js"></script>
+	<script src="/js/script.js"></script>
+
+<link rel="stylesheet" href="/css/style/style.css">
+
+	<link href="/css/default.css" rel="stylesheet" type="text/css"> 
+
+</head></html>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">Richie</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+
+			<li><a href="/">Home</a></li>
+			<li><a href="/archives">Archives</a></li>
+			<li><a href="/about">About</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form accept-charset="UTF-8" class="search-form">
+			<input type="search" name="q" class="search-form-input" placeholder="Search" id="local-search-input">
+		</form>
+		<div id="local-search-result" class="local-search-result-cls"></div>
+	</div>
+</header>
+    <div id="main">
+      <article id="post-我的博客增强" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2018/09/16/我的博客增强/" class="article-date">
+  <time datetime="2018-09-16T15:12:48.000Z" itemprop="datePublished">2018-09-16</time>
+</a>
+		</span>
+		<span class="meta-elements author"></span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      我的博客增强
+    </h1>
+  
+
+	</header>
+	<div class="entry-content" id="&lt;h5 id=&#34;一-如何实现个人域名绑定github地址？&#34;&gt;&lt;a href=&#34;#一-如何实现个人域名绑定github地址？&#34; class=&#34;headerlink&#34; title=&#34;一.如何实现个人域名绑定github地址？&#34;&gt;&lt;/a&gt;一.如何实现个人域名绑定github地址？&lt;/h5&gt;&lt;p&gt;1.首先需要自己注册一个域名，这个是收费的。我是在腾讯云注册的，比较便宜。&lt;/p&gt;
+&lt;p&gt;2.在主项目里新建一个文件CNAME，没有后缀哦，然后在里面写上自己需要绑定的域名&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;示例为： richie123.com&lt;/li&gt;
+&lt;li&gt;此处设置的是顶级域名，当然你也可以设置二级域名，我们只演示绑定顶级域名&lt;br&gt;&lt;strong&gt;注意：CNAME文件在下次 hexo deploy的时候就消失了，需要重新创建，这样就很繁琐&lt;/strong&gt;">
+	
+    	<h5 id="一-如何实现个人域名绑定github地址？"><a href="#一-如何实现个人域名绑定github地址？" class="headerlink" title="一.如何实现个人域名绑定github地址？"></a>一.如何实现个人域名绑定github地址？</h5><p>1.首先需要自己注册一个域名，这个是收费的。我是在腾讯云注册的，比较便宜。</p>
+<p>2.在主项目里新建一个文件CNAME，没有后缀哦，然后在里面写上自己需要绑定的域名</p>
+<ul>
+<li>示例为： richie123.com</li>
+<li>此处设置的是顶级域名，当然你也可以设置二级域名，我们只演示绑定顶级域名<br><strong>注意：CNAME文件在下次 hexo deploy的时候就消失了，需要重新创建，这样就很繁琐</strong><a id="more"></a>
+<blockquote class="pullquote [class]"><p>方法一：每次 hexo d 之后，就去 GitHub 仓库根目录新建 CNAME文件</p>
+<p>方法二：在 hexo g 之后， hexo d 之前，把CNAME文件复制到 “\public\” 目录下面，里面写入你要绑定的域名。</p>
+<p>方法三（推荐）：将需要上传至github的内容放在source文件夹，例如CNAME、favicon.ico、images等，这样在 hexo d 之后就不会被删除了。</p>
+<p>方法四：通过安装插件实现永久保留<br>$ npm install hexo-generator-cname –save<br>之后在_config.yml中添加一条<br>Plugins:<br>&nbsp;&nbsp;-hexo-generator-cname<br>需要注意的是：如果是在github上建立的CNAME文件，需要先clone到本地，然后安装插件，在deploy上去即可。CNAME只允许一个域名地址。</p>
+</blockquote>
+</li>
+</ul>
+<p>3.然后去域名提供商，比如阿里云上去设置。找到域名，然后点击 “解析” ，进入页面之后添加解析，设置如下示例：<br><img src="http://pf3rzqn04.bkt.clouddn.com/blog/2018022711370244.jpg" alt="img-host"><br><blockquote class="pullquote [class]"><p>注意这两个记录值192.30.252.153 和 192.30.252.154<br>是固定的，详情参考 <a href="https://help.github.com/articles/setting-up-an-apex-domain/" target="_blank" rel="noopener">https://help.github.com/articles/setting-up-an-apex-domain/</a></p>
+<p>保存之后不到10分钟就解析成功了。</p>
+</blockquote><br>然后就可以通过域名访问了，不过此时只能通过http来访问。</p>
+<h5 id="二-如何实现实现https访问？"><a href="#二-如何实现实现https访问？" class="headerlink" title="二.如何实现实现https访问？"></a>二.如何实现实现https访问？</h5><p>方法一：在github上开启https。进入github项目setting<br><img src="http://pf3rzqn04.bkt.clouddn.com/blog/%E4%BC%81%E4%B8%9A%E5%BE%AE%E4%BF%A1%E6%88%AA%E5%9B%BE_15371119136054.png" alt="img-https"><br>刚才在域名提供商出配置的解析需要修改一下：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">类型</th>
+<th style="text-align:center">名称</th>
+<th style="text-align:center">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">example.com</td>
+<td style="text-align:center">185.199.108.153</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">example.com</td>
+<td style="text-align:center">185.199.109.153</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">example.com</td>
+<td style="text-align:center">185.199.110.153</td>
+</tr>
+<tr>
+<td style="text-align:center">A</td>
+<td style="text-align:center">example.com</td>
+<td style="text-align:center">185.199.111.153</td>
+</tr>
+</tbody>
+</table>
+<p>方法二：通过第三方途径实现<br>首先，为大家介绍一下CloudFlare</p>
+<blockquote>
+<p>Cloudflare是一家美国的跨国科技企业，总部位于旧金山，在英国伦敦亦设有办事处。Cloudflare以向客户提供网站安全管理、性能优化及相关的技术支持为主要业务。通过基于反向代理的内容传递网络(ContentDeliveryNetwork,CDN)及分布式域名解析服务(DistributedDomainNameServer)，Cloudflare可以帮助受保护站点抵御包括拒绝服务攻击(DenialofService)在内的大多数网络攻击，确保该网站长期在线，同时提升网站的性能、访问速度以改善访客体验。</p>
+</blockquote>
+<p>简单地说，CloudFlare是一家CDN提供商，它提供了免费的https服务(但不是应用SSL证书)。实现模式就是，用户到CDN服务器的连接为https，而CDN服务器到GithubPage服务器的连接为http，即在CDN服务器加上反向代理。<br>注册账户，配置192.30.252.153 和 192.30.252.154<br><a href="https://www.jianshu.com/p/653b5682e2bd" target="_blank" rel="noopener">通过CloudFlare实现https</a></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+			</span>
+			<span class="tags">
+				
+			</span>
+		</div>
+	</footer>
+	
+		
+<nav id="article-nav">
+  
+    <a href="/2018/09/25/natapp免费实现内网穿透/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          natapp免费实现内网穿透
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/16/我的博客是怎么搭建的/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          我的博客是怎么搭建的?
+        
+      </div>
+    </a>
+  
+</nav>
+
+		
+		
+			
+				<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+<div class="valine"></div>
+<script>
+	new Valine({
+		el: '.valine',
+		notify: true,
+		verify: true,
+		visitor: true,
+		app_id: 'TkHRz0BCzq1tExUxH9nRSNcl-gzGzoHsz',
+		app_key: '5ttAb6LSYOtxt1dSqvEH0RPN',
+		placeholder: 'Please fill out your comments',
+		lang:'en'
+	});
+</script>
+
+			
+		
+		
+		
+	
+</article>
+
+
+    </div>
+    <div class="mb-search">
+  <form accept-charset="utf-8">
+    <input type="search" name="q" placeholder="Search" class="m-search-form-input" id="m-local-search-input">
+  </form>
+  <div id="m-local-search-result" class="m-local-search-result-cls"></div>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">Richie</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2019 Liu Peng<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+
+<script src="/js/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+</body>
+</html>
